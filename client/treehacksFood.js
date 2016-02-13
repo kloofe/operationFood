@@ -1,4 +1,3 @@
-Recipes = new Mongo.Collection("recipes");
 
 if (Meteor.isClient) {
   // This code only runs on the client
@@ -24,8 +23,7 @@ if (Meteor.isClient) {
 	});
 }
 
-if (Meteor.isServer) {
-  Meteor.startup(function () {
-    // code to run on server at startup
-  });
-}
+
+// remove one at random
+// Recipes.remove(Recipes.findOne()._id)
+
