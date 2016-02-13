@@ -2,13 +2,13 @@ Recipes = new Mongo.Collection("recipes");
 
 if (Meteor.isClient) {
   // This code only runs on the client
-  Template.body.helpers({
+  Template.submitrecipes.helpers({
     recipes: function () {
       return Recipes.find({});
     }
   });
   
-  Template.body.events({
+  Template.submitrecipes.events({
 		"submit .new-recipe": function(event) {
 			event.preventDefault();
 			

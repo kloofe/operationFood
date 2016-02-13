@@ -1,9 +1,9 @@
 <head>
   <title>Operation Food</title>
 </head>
- 
-<body>
-  <div class="container">
+
+<template name="submitrecipes">
+<div class="container">
     <header>
       <h1>Submit Recipes</h1>
     </header>
@@ -22,6 +22,10 @@
       {{/each}}
     </ul>
   </div>
+</template>
+
+<body>
+{{>submitrecipes}}  
 </body>
  
 <template name="recipe">
