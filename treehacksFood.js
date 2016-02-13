@@ -1,19 +1,27 @@
+Recipes = new Mongo.Collection("recipes");
+
 if (Meteor.isClient) {
-  // counter starts at 0
-  Session.setDefault('counter', 0);
-
-  Template.hello.helpers({
-    counter: function () {
-      return Session.get('counter');
+  // This code only runs on the client
+  Template.body.helpers({
+    recipes: function () {
+      return Recipes.find({});
     }
   });
-
-  Template.hello.events({
-    'click button': function () {
-      // increment the counter when button is clicked
-      Session.set('counter', Session.get('counter') + 1);
-    }
-  });
+  
+  Template.body.events({
+		"submit .new-recipe": function(event) {
+			event.preventDefault();
+			
+			// recipe name
+			var recName = event.target.elements["name"].value;
+			var ingredients = event.target.elements["ingredients"].value;
+			
+			Recipes.insert({
+				name: recName,
+				ingredients: ingredients
+			});
+		}
+	});
 }
 
 if (Meteor.isServer) {

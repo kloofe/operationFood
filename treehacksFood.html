@@ -1,14 +1,31 @@
 <head>
-  <title>treehacksFood</title>
+  <title>Operation Food</title>
 </head>
-
+ 
 <body>
-  <h1>Welcome to Meteor!</h1>
-
-  {{> hello}}
+  <div class="container">
+    <header>
+      <h1>Submit Recipes</h1>
+    </header>
+	
+	<form class="new-recipe">
+		<input type="text" name="name" placeholder="Recipe Name">
+		<br>
+		<input type="text" name="ingredients" placeholder="Ingredients">
+		<br>
+		<input type="submit" value="Submit">
+	</form>
+ 
+    <ul>
+      {{#each recipes}}
+        {{> recipe}}
+      {{/each}}
+    </ul>
+  </div>
 </body>
-
-<template name="hello">
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
+ 
+<template name="recipe">
+<h1>{{name}}</h1>
+<h2>Ingredients:</h2>
+  <li>{{ingredients}}</li>
 </template>
