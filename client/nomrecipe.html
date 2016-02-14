@@ -3,7 +3,7 @@
  {{#each show}}
  {{> recipe}}
  {{/each}}
-<a href="" class="gimme" style="z-index: 5;">workpls</a>
+<a href="" class="gimme" style="position: fixed; bottom: 20px; left: 50%; margin-left: -63px; z-index: 10;">NAH</a>
 </div>
  </template>
  
@@ -14,10 +14,12 @@
 </div>
 <div class="recipeWrapper">
 <div class="filler">
+<div style="z-index: 2; padding: 30px;">
 <h1>{{name}}</h1>
+
+<br><br><br><br><br><br><br><br><br>
 <h2>Ingredients</h2>
-<div class="recipeGradient"></div>
-I needa make fancinessssssssssssssssssss
+
 
 <ul>
 {{#each ingredients}}
@@ -25,10 +27,12 @@ I needa make fancinessssssssssssssssssss
 {{/each}}
 </ul>
 
-{{steps this}}
-
-
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<div id="sadface">
+Click <a href="{{steps this}}">here</a> to view the recipe!
+</div>
+</div>
+<div class="recipeGradient"></div>
+<br><br><br><br><br>
 </div>
 </div>
 </template>

@@ -42,7 +42,7 @@ var randomRecipe = new ReactiveVar()
 		   return sobs.steps;
 	   }
 	   else {
-		   return 'Gotta go here: <a href="' + sobs.source + '">here.</a>';
+			return sobs.source;
 	   }
     }
   });

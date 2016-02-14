@@ -69,7 +69,7 @@ if (Meteor.isServer) {
 		processJSON(response);
 	}
 	*/
-	var theUrl = "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/search?limitLicense=false&number=10&offset=0&query=<required>&type=main+course";
+	var theUrl = "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/search?limitLicense=false&number=50&offset=0&query=<required>&type=main+course";
 	var response = httpGet(theUrl);
 	processAllRecipes(response);
 	

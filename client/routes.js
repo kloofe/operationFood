@@ -1,7 +1,6 @@
 Router.route('/', function () {
-  this.render('submitrecipes');
+  this.render('index');
 });
 
 // This format uses magic to render the 'items' template
-Router.route('/index');
 Router.route('/nomrecipe');
