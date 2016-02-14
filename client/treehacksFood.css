@@ -25,3 +25,11 @@ h1.index-title
     text-align: center;
     font-weight: 200;
 }
+
+.gimme
+{
+    -moz-box-shadow:inset 0px 0px 0px 0px #ffb051;
+    -webkit-box-shadow:inset 0px 0px 0px 0px #ffb051;
+    box-shadow:inset 0px 0px 0px 0px #ffb051;
+    background: linear-gradient(to bottom, #ffb051, #fb9c4a);
+}
