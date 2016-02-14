@@ -24,20 +24,29 @@ var randomRecipe = new ReactiveVar()
   });
   
   Template.nomrecipe.events({
-	  "click .refresh": function(event) {
+	  "click .gimme": function(event) {
 		  halp();
 	  }
   });
   
+  Template.index.events({
+  	  "click .gimme": function(event) {
+		  halp();
+	  }
+  });
+ 
+Template.nomrecipe.onRendered(function () {
+	halp();
+	console.log("quesitonmark?");
+	
+});
+ 
   Template.submitrecipes.events({
 	  // I need to make my button....
 	  /*
 	  "submit .halp": function(event) {
 		  //var recipe = chooseRandom();
 	  }*/
-	  "click .refresh": function(event) {
-		  halp();
-	  },
 	  
 	  
 		"submit .new-recipe": function(event) {
