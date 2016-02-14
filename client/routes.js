@@ -4,3 +4,4 @@ Router.route('/', function () {
 
 // This format uses magic to render the 'items' template
 Router.route('/index');
+Router.route('/nomrecipe');

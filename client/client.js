@@ -1,7 +1,14 @@
+function randNum() {
+	return parseInt((Math.random() * Recipes.find().count()), 10);
+}
 
+function halp() {
+	randomRecipe.set(Recipes.find({"key": randNum()}));
+}
 
 /* need a search function */
 if (Meteor.isClient) {	
+var randomRecipe = new ReactiveVar()
   // This code only runs on the client
 	Meteor.subscribe("recipes");
     Template.submitrecipes.helpers({
@@ -10,7 +17,29 @@ if (Meteor.isClient) {
     }
   });
   
+  Template.nomrecipe.helpers({
+	  show: function() {
+		return randomRecipe.get();
+	}
+  });
+  
+  Template.nomrecipe.events({
+	  "click .refresh": function(event) {
+		  halp();
+	  }
+  });
+  
   Template.submitrecipes.events({
+	  // I need to make my button....
+	  /*
+	  "submit .halp": function(event) {
+		  //var recipe = chooseRandom();
+	  }*/
+	  "click .refresh": function(event) {
+		  halp();
+	  },
+	  
+	  
 		"submit .new-recipe": function(event) {
 			event.preventDefault();
 			
