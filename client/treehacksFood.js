@@ -1,7 +1,10 @@
 
-if (Meteor.isClient) {
+
+/* need a search function */
+if (Meteor.isClient) {	
   // This code only runs on the client
-  Template.submitrecipes.helpers({
+	Meteor.subscribe("recipes");
+    Template.submitrecipes.helpers({
     recipes: function () {
       return Recipes.find({});
     }
@@ -22,7 +25,6 @@ if (Meteor.isClient) {
 		}
 	});
 }
-
 
 // remove one at random
 // Recipes.remove(Recipes.findOne()._id)
